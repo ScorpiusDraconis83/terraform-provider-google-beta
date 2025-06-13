@@ -60,6 +60,7 @@ import (
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/colab"
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/composer"
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/compute"
+	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/contactcenterinsights"
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/containeranalysis"
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/containerattached"
 	"github.com/hashicorp/terraform-provider-google-beta/google-beta/services/corebilling"
@@ -296,6 +297,7 @@ var handwrittenDatasources = map[string]*schema.Resource{
 	"google_container_engine_versions":                           container.DataSourceGoogleContainerEngineVersions(),
 	"google_container_registry_image":                            containeranalysis.DataSourceGoogleContainerImage(),
 	"google_container_registry_repository":                       containeranalysis.DataSourceGoogleContainerRepo(),
+	"google_dataplex_data_quality_rules":                         dataplex.DataSourceDataplexDataQualityRules(),
 	"google_dataproc_metastore_service":                          dataprocmetastore.DataSourceDataprocMetastoreService(),
 	"google_datastream_static_ips":                               datastream.DataSourceGoogleDatastreamStaticIps(),
 	"google_dns_keys":                                            dns.DataSourceDNSKeys(),
@@ -587,9 +589,9 @@ var handwrittenIAMDatasources = map[string]*schema.Resource{
 }
 
 // Resources
-// Generated resources: 671
+// Generated resources: 673
 // Generated IAM resources: 339
-// Total generated resources: 1010
+// Total generated resources: 1012
 var generatedResources = map[string]*schema.Resource{
 	"google_folder_access_approval_settings":                                     accessapproval.ResourceAccessApprovalFolderSettings(),
 	"google_organization_access_approval_settings":                               accessapproval.ResourceAccessApprovalOrganizationSettings(),
@@ -962,6 +964,7 @@ var generatedResources = map[string]*schema.Resource{
 	"google_compute_url_map":                                                     compute.ResourceComputeUrlMap(),
 	"google_compute_vpn_gateway":                                                 compute.ResourceComputeVpnGateway(),
 	"google_compute_vpn_tunnel":                                                  compute.ResourceComputeVpnTunnel(),
+	"google_contact_center_insights_view":                                        contactcenterinsights.ResourceContactCenterInsightsView(),
 	"google_container_analysis_note":                                             containeranalysis.ResourceContainerAnalysisNote(),
 	"google_container_analysis_note_iam_binding":                                 tpgiamresource.ResourceIamBinding(containeranalysis.ContainerAnalysisNoteIamSchema, containeranalysis.ContainerAnalysisNoteIamUpdaterProducer, containeranalysis.ContainerAnalysisNoteIdParseFunc),
 	"google_container_analysis_note_iam_member":                                  tpgiamresource.ResourceIamMember(containeranalysis.ContainerAnalysisNoteIamSchema, containeranalysis.ContainerAnalysisNoteIamUpdaterProducer, containeranalysis.ContainerAnalysisNoteIdParseFunc),
@@ -1083,6 +1086,7 @@ var generatedResources = map[string]*schema.Resource{
 	"google_dialogflow_cx_page":                                                  dialogflowcx.ResourceDialogflowCXPage(),
 	"google_dialogflow_cx_security_settings":                                     dialogflowcx.ResourceDialogflowCXSecuritySettings(),
 	"google_dialogflow_cx_test_case":                                             dialogflowcx.ResourceDialogflowCXTestCase(),
+	"google_dialogflow_cx_tool":                                                  dialogflowcx.ResourceDialogflowCXTool(),
 	"google_dialogflow_cx_version":                                               dialogflowcx.ResourceDialogflowCXVersion(),
 	"google_dialogflow_cx_webhook":                                               dialogflowcx.ResourceDialogflowCXWebhook(),
 	"google_discovery_engine_chat_engine":                                        discoveryengine.ResourceDiscoveryEngineChatEngine(),
@@ -1817,6 +1821,7 @@ func UseGeneratedProducts() {
 	var _ = colab.ProductName
 	var _ = composer.ProductName
 	var _ = compute.ProductName
+	var _ = contactcenterinsights.ProductName
 	var _ = containeranalysis.ProductName
 	var _ = containerattached.ProductName
 	var _ = corebilling.ProductName
